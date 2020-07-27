@@ -4,8 +4,263 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Dashboard</title>
+    <link rel="stylesheet" href="css/toggle-switch.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Dashboard</h1>
+        <div>
+            <img src="icons/icon-bell.svg" alt="bell icon">
+            <div id="#notifications">
+
+            </div>
+        </div>
+        <img src="davidpic.jpg" alt="picture of me">
+        <h3>David Zheng</h3>
+    </header>
+
+    <nav>
+        <a href="#"><img src="icons/icon-dashboard.svg" alt=""></a>
+        <a href="#"><img src="icons/icon-members.svg" alt=""></a>
+        <a href="#"><img src="icons/icon-visits.svg" alt=""></a>
+        <a href="#"><img src="icons/icon-settings.svg" alt=""></a>
+    </nav>
+
+    <main>
+
+        <div class="main-header">
+            <h2>Dashboard</h2>
+            <div>
+                <input type="search" placeholder="Search...">
+            </div>
+        </div>
+
+        <div id="alert">
+            <!-- JS will make alerts-->
+        </div>
+
+        <section class="traffic">
+            <div class="traffic-header">
+                <h3>Traffic</h3>
+                <ul class="traffic-nav">
+                    <li>Hourly</li>
+                    <li>Daily</li>
+                    <li>Weekly</li>
+                    <li>Monthly</li>
+                </ul>
+            </div>
+
+            <div class="widget-container-full">
+                <img src="test charts/linegraph.png" alt="test">
+                <canvas id="traffic-chart"></canvas>
+            </div>
+        </section>
+
+        <section class="daily">
+            <h3>Daily Traffic</h3>
+
+            <div class="widget-container-half">
+                <img src="test charts/bargraph.jpg" alt="test">
+                <canvas id="daily-chart"></canvas>
+            </div>
+        </section>
+
+        <section class="mobile">
+            <h3>Mobile Users</h3>
+
+            <div class="widget-container-half">
+                <img src="test charts/piechart.png" alt="test">
+                <canvas id="mobile-chart"></canvas>
+            </div>
+        </section>
+
+      <section class="social">
+
+        <div class="social-container">
+            <div class="social-image">
+                <img src="icons/icon-twitter.svg" alt="twitter">
+            </div>
+
+            <div class="social-text">
+                <p>Twitter</p>
+                <p>10,345</p>
+            </div>
+        </div>
+
+        <div class="social-container">
+            <div class="social-image">
+                <img src="icons/icon-facebook.svg" alt="facebook">
+            </div>
+
+            <div class="social-text">
+                <p>Facebook</p>
+                <p>8,739</p>
+            </div>
+        </div>
+
+        <div class="social-container">
+            <div class="social-image">
+                <img src="icons/icon-google-plus.svg" alt="google+">
+            </div>
+
+            <div class="social-text">
+                <p>Google+</p>
+                <p>2,530</p>
+            </div>
+        </div>
+      </section>
+
+      <section class="members">
+            <h3>New Members</h3>
+
+            <div class="members-container">
+                <img src="images/member-1.jpg" alt="picture of member 1">
+                <div class="members-text">
+                    <p>Victoria Chambers</p>
+                    <a href="#">victoria.chambers80@example.com</a>
+                </div>
+                <p>10/15/15</p>
+            </div>
+
+            <div class="members-container">
+                <img src="images/member-2.jpg" alt="picture of member 2">
+                <div class="members-text">
+                    <p>Dale Byrd</p>
+                    <a href="#">dale.byrd52@example.com</a>
+                </div>
+                <p>10/15/15</p>
+            </div>
+
+            <div class="members-container">
+                <img src="images/member-3.jpg" alt="picture of member 3">
+                <div class="members-text">
+                    <p>Dawn Wood</p>
+                    <a href="#">dawn.wood16@example.com</a>
+                </div>
+                <p>10/15/15</p>
+            </div>
+
+            <div class="members-container">
+                <img src="images/member-4.jpg" alt="picture of member 4">
+                <div class="members-text">
+                    <p>Dan Oliver</p>
+                    <a href="#">dan.oliver82@example.com</a>
+                </div>
+                <p>10/15/15</p>
+            </div>
+      </section>
+
+      <section class="activity">
+            <h3>Recent Activity</h3>
+
+            <div class="members-container">
+                <img src="images/member-1.jpg" alt="picture of member 1">
+
+                <div class="member-text">
+                    <p>Victoria Chambers commented on Dashboard's SEO Tips</p>
+                    <p>4 hours ago</p>
+                </div>
+                <p>></p>
+            </div>
+            
+            <div class="members-container">
+                <img src="images/member-2.jpg" alt="picture of member 2">
+
+                <div class="member-text">
+                    <p>Dale Byrd like the post Facebook's Changes for 2020</p>
+                    <p>5 hours ago</p>
+                </div>
+                <p>></p>
+            </div>
+
+            <div class="members-container">
+                <img src="images/member-3.jpg" alt="picture of member 3">
+
+                <div class="member-text">
+                    <p>Dawn Wood commented on Facebook's Changes for 2020</p>
+                    <p>5 hours ago</p>
+                </div>
+                <p>></p>
+            </div>
+
+            <div class="members-container">
+                <img src="images/member-4.jpg" alt="picture of member 4">
+
+                <div class="member-text">
+                    <p>Dan Oliver posted Dashboard's SEO Tips</p>
+                    <p>1 hours ago</p>
+                </div>
+                <p>></p>
+            </div>
+    </section>
+
+    <section class="message">
+        <h3>MESSAGE USER</h3>
+
+        <form action="POST" class="widget-container">
+            <input type="text" placeholder="Search for User" id="userField">
+
+            <textarea name="messageField" id="messageField" placeholder="Message for User">
+
+            </textarea>
+
+            <button id="send">SEND</button>
+        </form>
+    </section>
+
+    <section class="settings">
+        <h3>SETTINGS</h3>
+        
+        <label class="switch-light switch-ios" onclick="">
+            <input type="checkbox">
+          
+            <strong>
+                Send Email Notifications
+            </strong>
+          
+            <span>
+              <span>Off</span>
+              <span>On</span>
+              <a></a>
+            </span>
+          </label>
+
+               
+        <label class="switch-light switch-ios" onclick="">
+            <input type="checkbox">
+          
+            <strong>
+                Set Profile to Public
+            </strong>
+          
+            <span>
+              <span>Off</span>
+              <span>On</span>
+              <a></a>
+            </span>
+          </label>
+
+
+       
+            <select name="timezone" id="timezone">
+                    <option disabled selected>Select a Timezone</option>
+                    <option value="eastern">Eastern Time</option>
+                    <option value="central">Central Time</option>
+                    <option value="mountain-daylight">Mountain Daylight Time</option>
+                    <option value="mountain-standard">Mountain Standard Time</option>
+                    <option value="pacific">Pacific Time</option>
+                    <option value="alaska">Alaska Daylight Time</option>
+                    <option value="hawaii">Hawaii-Aleutian Standard Time</option>
+            </select>
+
+            <div class="settings-button">
+                <button id="save">SAVE</button>
+                <button id="cancel">CANCEL</button>
+            </div>
+    </section>
+
+    </main>
+
 </body>
 </html>
