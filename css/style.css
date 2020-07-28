@@ -15,16 +15,7 @@ h3 {
     grid-template-areas: 
     "header" 
     "nav" 
-    "main-header" 
-    "alert" 
-    "traffic" 
-    "daily"
-    "mobile"
-    "social"
-    "members"
-    "activity"
-    "message"
-    "settings";
+    "main";
 }
 
 header {
@@ -90,8 +81,11 @@ nav img:hover {
     border-bottom: solid 5px #4BE54A;
 }
 
+main {
+    grid-area: main;
+}
+
 .main-header {
-    grid-area: main-header;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -115,10 +109,6 @@ nav img:hover {
     align-self: center;
 }
 
-#alert {
-    grid-area: alert;
-}
-
 .alert-banner {
     background-color: #5751D9;
     width: 80%;
@@ -132,11 +122,6 @@ nav img:hover {
     display: flex;
     justify-content: space-between;
    
-}
-
-
-.traffic {
-    grid-area: traffic;
 }
 
 #traffic-chart,
@@ -169,22 +154,6 @@ nav img:hover {
 ul li {
     display: inline-block;
     color: #666666;
-}
-
-.widget-container-full {
-    text-align: center;
-}
-
-.daily {
-    grid-area: daily;
-}
-
-.mobile {
-    grid-area: mobile;
-}
-
-.widget-container-half {
-    text-align: center;
 }
 
 .traffic,
@@ -253,10 +222,6 @@ ul li {
     margin-bottom: 15px;
 }
 
-.members {
-    grid-area: members;
-}
-
 .members-container {
     display: flex;
     align-items: center;
@@ -277,6 +242,7 @@ ul li {
 .members-container p,
 .members-text p {
     color: #666666;
+
 }
 
 .members-container p {
@@ -285,14 +251,6 @@ ul li {
 
 .members-text a {
     color: #5751D9;
-}
-
-.activity {
-    grid-area: activity;
-}
-
-.message {
-    grid-area: message;
 }
 
 .message form {
@@ -332,7 +290,6 @@ form button {
 }
 
 .settings {
-    grid-area: settings;
     padding-bottom: 30px;
 }
 
@@ -375,21 +332,15 @@ form button {
     font-weight: 600;
 }
 
-/* @media (min-width: 1024px) {
+@media (min-width: 768px) {
     
     .grid-container {
-        grid-template-columns: 55px 1fr 1fr;
+        grid-template-columns: 55px 1fr;
         grid-template-rows: auto;
     
         grid-template-areas: 
-        "header header header" 
-        "nav main-header main-header" 
-        "nav alert alert" 
-        "nav traffic traffic" 
-        "nav daily mobile"
-        "nav social social"
-        "nav members activity"
-        "nav message settings"
+        "header header" 
+        "nav main";
     }
 
     h1 {
@@ -416,7 +367,6 @@ form button {
     }
     
     nav a:hover {
-        border-bottom: none;
         border-left: solid 4px #4BE54A;
     }
 
@@ -424,7 +374,49 @@ form button {
         width: 40px;
         height: 40px;
     }
+
+    nav img:hover {
+        border-bottom: none;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 50%;
+    }
+
+    .main-header {
+        grid-column: 1 / span 2;
+    }
+
+    #alert {
+        grid-column: 1 / span 2;
+    }
+
+    .traffic,
+    .social {
+        grid-column: 1 / span 2;
+    }
+
+    .daily,
+    .members,
+    .message {
+        grid-column: 1 / span 1;
+    }
+
+    .mobile,
+    .activity,
+    .settings {
+        grid-column: 2 / span 1;
+    }
     
+    .widget-container-full {
+        width: 90vw;
+    }
+
+    .widget-container-half {
+        width: 45vw;
+    }
+
     .traffic,
     .daily,
     .mobile, 
@@ -435,4 +427,4 @@ form button {
         border-bottom: none;
         padding-bottom: 0px;
     }
-} */
+}
