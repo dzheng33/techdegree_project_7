@@ -1,5 +1,5 @@
 const alertBanner = document.getElementById("alert");
-
+const dot = document.querySelector(".dot");
 alertBanner.innerHTML =
 `
 <div class="alert-banner">
@@ -13,6 +13,7 @@ alertBanner.addEventListener("click", function(event){
     const element = event.target;
     if (element.className === "alert-banner-close") {
     alertBanner.style.display = "none";
+    dot.style.display = "none";
     }
 });
 
@@ -83,6 +84,8 @@ let trafficOptions = {
     }
 };
 
+trafficNav[0].style.backgroundColor = "#4BE54A";
+trafficNav[0].style.color = "white";
 let trafficChart = new Chart(trafficCanvas, {
     type: 'line',
     data: trafficData,
@@ -92,7 +95,14 @@ let trafficChart = new Chart(trafficCanvas, {
 
 trafficUl.addEventListener("click", function(event){
 
+    for(let i = 0; i < trafficNav.length; i++){
+        trafficNav[i].style.backgroundColor = "";
+        trafficNav[i].style.color = "#666666";
+    }
+
     if(event.target.textContent === "Hourly"){
+        event.target.style.backgroundColor = "#4BE54A";
+        event.target.style.color = "white";
         let trafficChart = new Chart(trafficCanvas, {
             type: 'line',
             data: trafficData,
@@ -102,6 +112,8 @@ trafficUl.addEventListener("click", function(event){
     }
 
     else if(event.target.textContent === "Daily") {
+        event.target.style.backgroundColor = "#4BE54A";
+        event.target.style.color = "white";
         let trafficChart = new Chart(trafficCanvas, {
             type: 'line',
             data: trafficData2,
@@ -110,6 +122,8 @@ trafficUl.addEventListener("click", function(event){
     }
 
     else if(event.target.textContent === "Weekly") {
+        event.target.style.backgroundColor = "#4BE54A";
+        event.target.style.color = "white";
         let trafficChart = new Chart(trafficCanvas, {
             type: 'line',
             data: trafficData3,
@@ -118,6 +132,8 @@ trafficUl.addEventListener("click", function(event){
     }
 
     else if(event.target.textContent === "Monthly") {
+        event.target.style.backgroundColor = "#4BE54A";
+        event.target.style.color = "white";
         let trafficChart = new Chart(trafficCanvas, {
             type: 'line',
             data: trafficData4,
